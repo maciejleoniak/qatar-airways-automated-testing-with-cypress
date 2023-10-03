@@ -1,3 +1,7 @@
+import 'cypress-shadow-dom';
+
+ /// <reference types = "Cypress" />
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,5 +27,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-/// <reference types = "Cypress" />
