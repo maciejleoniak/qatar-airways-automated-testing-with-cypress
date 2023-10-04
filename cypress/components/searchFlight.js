@@ -1,36 +1,54 @@
-import dataFlight from '../fixtures/dataFlight.json'
+import dataFlight from "../fixtures/dataFlight.json";
 
 class SearchFlight {
 
-    searchFlightFieldFromSelector = '#mat-input-0';
-    searchFlightFieldToSelector = '#mat-input-1';
-    shadowDomSelector = '[ng-version="14.2.12"]';
+  shadowDomSelector = '[ng-version="14.2.12"]';
+  searchFlightFieldFromSelector = "#mat-input-0";
+  searchFlightFieldToSelector = "#mat-input-1";
+  searchDepartureDateSelector = "#dpFromDate";
+  searchReturnDateSelector = "#dpToDate";
 
-    searchFor() {
-        cy.get(this.shadowDomSelector)
-            .shadow()
-            .find(this.searchFlightFieldFromSelector)
-            .click()
-            .type(dataFlight.flightFrom)
-            .wait(2000)
-            .type('{enter}')
+  searchFromTo() {
+    cy.get(this.shadowDomSelector)
+      .shadow()
+      .find(this.searchFlightFieldFromSelector)
+      .click()
+      .type(dataFlight.flightFrom)
+      .wait(2000)
+      .type("{enter}");
 
-        cy.get(this.shadowDomSelector)
-            .shadow()
-            .find(this.searchFlightFieldToSelector)
-            .click()
-            .type(dataFlight.flightTo)
-            .wait(2000)
-            .type('{enter}')
-    };
+    cy.get(this.shadowDomSelector)
+      .shadow()
+      .find(this.searchFlightFieldToSelector)
+      .click()
+      .type(dataFlight.flightTo)
+      .wait(2000)
+      .type("{enter}")
+      .find(this.searchDepartureDateSelector)
+      .type(dataFlight.departureDate)
+      .wait(2000)
+      .type("{enter}");
+  }
 
-    searcheDate(departureData, returnData) {
+  // searchDate() {
+  //   cy.get(this.shadowDomSelector)
+  //     .shadow()
+  //     .find(this.searchDepartureDateSelector)
+  //     .click()
+  //     .type(dataFlight.departureDate)
+  //     .wait(2000)
+  //     .type("{enter}");
 
-    };
+  //   cy.get(this.shadowDomSelector)
+  //     .shadow()
+  //     .find(this.searchReturnDateSelector)
+  //     .click()
+  //     .type(dataFlight.returnDate)
+  //     .wait(2000)
+  //     .type("{enter}");
+  // }
 
-    passangerPicker(passanger, cabinClass) {
-
-    };
-};
+  passangerPicker(passanger, cabinClass) { }
+}
 
 module.exports = new SearchFlight();
