@@ -1,7 +1,7 @@
 {
     "flightFrom": "Warsaw",
     "flightTo": "Doha",
-    "departureDate": "2023-12-01",
+    "departureDate": "1",
     "returnDate": "2023-12-08",
     "passengers": 2,
     "cabinClass": "Economy"

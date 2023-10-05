@@ -18,7 +18,7 @@ class MainPage {
 
   SearchBar() {
     SearchFlight.searchFromTo();
-    // SearchFlight.searchDate();
+    SearchFlight.searchDate();
   }
 }
 

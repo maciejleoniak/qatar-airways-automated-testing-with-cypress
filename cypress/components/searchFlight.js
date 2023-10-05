@@ -23,21 +23,17 @@ class SearchFlight {
       .click()
       .type(dataFlight.flightTo)
       .wait(2000)
-      .type("{enter}")
+      .type("{enter}");
+  }
+
+  searchDate() {
+    cy.get(this.shadowDomSelector)
+      .shadow()
       .find(this.searchDepartureDateSelector)
       .type(dataFlight.departureDate)
       .wait(2000)
       .type("{enter}");
   }
-
-  // searchDate() {
-  //   cy.get(this.shadowDomSelector)
-  //     .shadow()
-  //     .find(this.searchDepartureDateSelector)
-  //     .click()
-  //     .type(dataFlight.departureDate)
-  //     .wait(2000)
-  //     .type("{enter}");
 
   //   cy.get(this.shadowDomSelector)
   //     .shadow()
