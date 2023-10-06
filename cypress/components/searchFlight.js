@@ -29,10 +29,11 @@ class SearchFlight {
   searchDate() {
     cy.get(this.shadowDomSelector)
       .shadow()
-      .find(this.searchDepartureDateSelector)
-      .type(dataFlight.departureDate)
-      .wait(2000)
-      .type("{enter}");
+      .find('#myDatesFlexible').click()
+      // .find(this.searchDepartureDateSelector)
+      // .type(dataFlight.departureDate)
+      // .wait(2000)
+      // .type("{enter}");
   }
 
   //   cy.get(this.shadowDomSelector)
