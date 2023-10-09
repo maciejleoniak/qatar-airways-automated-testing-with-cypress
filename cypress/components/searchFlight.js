@@ -7,6 +7,8 @@ class SearchFlight {
   searchFlightFieldToSelector = "#mat-input-1";
   searchDepartureDateSelector = "#dpFromDate";
   searchReturnDateSelector = "#dpToDate";
+  searchPassengerPickerSelector= "#passenger-content";
+  
 
   searchFromTo() {
     cy.get(this.shadowDomSelector)
@@ -29,23 +31,23 @@ class SearchFlight {
   searchDate() {
     cy.get(this.shadowDomSelector)
       .shadow()
-      .find('#myDatesFlexible').click()
-      // .find(this.searchDepartureDateSelector)
-      // .type(dataFlight.departureDate)
-      // .wait(2000)
-      // .type("{enter}");
+      .find(this.searchDepartureDateSelector)
+      .first()
+      .clear()
+      .type(dataFlight.departureDate)
+
+    cy.get(this.shadowDomSelector)
+      .shadow()
+      .find(this.searchReturnDateSelector)
+      .first()
+      .clear()
+      .type(dataFlight.returnDate)
+
+      cy.get(this.shadowDomSelector)
+      .shadow()
+      .find('.flightsearh-button')
+      .click({ force: true });
   }
-
-  //   cy.get(this.shadowDomSelector)
-  //     .shadow()
-  //     .find(this.searchReturnDateSelector)
-  //     .click()
-  //     .type(dataFlight.returnDate)
-  //     .wait(2000)
-  //     .type("{enter}");
-  // }
-
-  passangerPicker(passanger, cabinClass) { }
 }
 
 module.exports = new SearchFlight();
