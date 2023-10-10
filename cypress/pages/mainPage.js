@@ -1,5 +1,6 @@
 import privacyPolicy from "../components/privacyPolicy";
 import SearchFlight from "../components/searchFlight";
+import newsletter from "../components/newsletter";
 
 class MainPage {
 
@@ -19,6 +20,11 @@ class MainPage {
   SearchBar() {
     SearchFlight.searchFromTo();
     SearchFlight.searchDate();
+  }
+
+  newsletterSingUp() {
+    newsletter.newsletterFillUp();
+    newsletter.newsletterPrivacyNotice();
   }
 }
 
