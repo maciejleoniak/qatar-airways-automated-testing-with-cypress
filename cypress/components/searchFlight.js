@@ -46,7 +46,7 @@ class SearchFlight {
       cy.get(this.shadowDomSelector)
       .shadow()
       .find('.flightsearh-button')
-      .realClick()
+      // .click()
       // cy.visit("https://booking.qatarairways.com/nsp/views/showBooking.action")
       // .click({ force: true });
       cy.log()
